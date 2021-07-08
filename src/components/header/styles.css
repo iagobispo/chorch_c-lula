@@ -1,0 +1,11 @@
+.box-header{
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.logo-header{
+    height: 60px;
+    width: 60px;
+}

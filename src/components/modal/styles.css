@@ -1,0 +1,86 @@
+
+.box-modal{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #32323280;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+.container-modal{
+    background-color: #32323280;
+    min-height: 487px;
+    border-radius: 5px;
+}
+
+.img_fundo{
+    background-image: url('../../assets/logo_fundo.png');
+    background-repeat: no-repeat;
+    background-position: center;  
+    
+}
+
+.img-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.btn-close-modal{
+    height: 35px;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    color: white;
+    background-color: #32323280;
+    border-radius: 5px;
+    margin-right: 24px;
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-inicia{
+    height: 35px;
+    border-color: #ffffff;
+    border-width: 0.5px;
+    color: white;
+    background-color: #17d6eb60;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    font-size: 12px;
+    
+}
+.icon-button{
+    margin-left: 5px;
+}
+
+.text-bold{
+    font-size: 0.938rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.text-h4-info{
+    font-size: 0.938rem;
+    color: #ffffff;
+    padding-left: 5px;
+    margin-bottom: 16px;
+}
+
+.text-title-city{
+    font-size: 1.25rem;
+    color: #ffffff;
+}
