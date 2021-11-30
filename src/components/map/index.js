@@ -1,5 +1,5 @@
 
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -23,24 +23,39 @@ var greenIcon = L.icon({
 
 
 
-export default function Map({latitude, longetude}) {
+
+export default function Map({props}) {
+    const [coordinates, setCoordinates] = useState({
+        latitude: false,
+        longetude: false
+    })
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            setCoordinates({
+                latitude: position.coords.latitude,
+                longetude: position.coords.longitude
+            })
+        });
+
+    }, [coordinates])
 
     return (
         <div className="container-map">
-          
-            <MapContainer style={{ width: '100vw', height:'100vh'}}  center={ [-23.5292585,-46.3336866] } zoom={15} scrollWheelZoom={false} >
+
+            {coordinates.latitude ? <MapContainer style={{ width: '100vw', height: '100vh' }} center={[coordinates.latitude, coordinates.longetude]} zoom={15} scrollWheelZoom={false} >
                 <TileLayer
-                    // url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    //  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
                     url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-                    
+
                 />
                 {
-                    posi.map((item, idex) => {
+                    props.map((item, idex) => {
                         return (
-                            <Marker icon={greenIcon} position={[item.lat, item.log]}>
+                            <Marker icon={greenIcon} position={[item.position.lat, item.position.log]}>
                                 <Popup>
-                                    {item.message
+                                    {item.position.message
                                     }
                                 </Popup>
                             </Marker>
@@ -48,41 +63,8 @@ export default function Map({latitude, longetude}) {
                     })
                 }
 
-            </MapContainer>
+            </MapContainer> : <label>Carregando...</label>}
         </div>
     )
 }
 
-const posi = [
-    {
-        message: 'Célula do Iago',
-        lat: -23.536557,
-        log: -46.330408
-    },
-    {
-        message: 'Célula da Monique',
-        lat: -23.537049,
-        log: -46.329313
-    },
-    {
-        message: 'Célula do Pedro',
-        lat: -23.5362744,
-        log: -46.330162
-    },
-    {
-        message: 'Célula do Pedro',
-        lat: -23.5446041,
-        log: -46.3339377
-    },
-    {
-        message: 'Célula do Pedro',
-        lat: -23.5365959,
-        log: -46.3305548
-    },
-    {
-        message: 'Célula Nagumo',
-        lat: -23.5344998,
-        log: -46.3396922
-    },
-    
-];
