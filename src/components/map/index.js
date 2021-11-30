@@ -6,7 +6,8 @@ import L from 'leaflet';
 
 import 'leaflet/dist/leaflet.css';
 
-import logo from '../../assets/svg/icon.svg';
+// import logo from '../../assets/svg/icon_black.svg';
+import logo from '../../assets/svg/icon_blue.svg';
 
 import './styles.css';
 
@@ -45,7 +46,7 @@ export default function Map({props}) {
 
             {coordinates.latitude ? <MapContainer style={{ width: '100vw', height: '100vh' }} center={[coordinates.latitude, coordinates.longetude]} zoom={15} scrollWheelZoom={false} >
                 <TileLayer
-                    //  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    //   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
                     url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
 

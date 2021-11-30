@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <div className="col-12 ">
             <header className="text-center bg-header  box-header" >
-                <img className="logo-header" src={Logo}/>
+                <img className="logo-header" alt='logo' src={Logo}/>
             </header>
         </div>
 

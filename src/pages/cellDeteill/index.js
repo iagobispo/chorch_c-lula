@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Header from "../../components/header";
 import Map from "../../components/map";
 import ModalDetail from '../../components/modal';
+import {culculateDistance} from '../../utils'
 
 import {MdSearch} from 'react-icons/md'
 
@@ -12,6 +13,8 @@ import './styles.css';
 
 
 const CellDeteill = () => {
+    culculateDistance()
+
     const [showModal, setShowModal] = useState(false)
     const [selectItem, setSelectItem] = useState({})
     return (
@@ -24,7 +27,7 @@ const CellDeteill = () => {
                 </div>
                 :
                 <div className="container box-sesrch mt-5 col-3">
-                    <img src={logo_white} className="img-logo-white"/>
+                    <img src={logo_white} alt='logo' className="img-logo-white"/>
                     <span className="span-title" >Encontre uma célula mais próxima.</span>
                     <div className="row pb-4">
                         <input className="col-10 input-search" type="text" />
@@ -37,7 +40,7 @@ const CellDeteill = () => {
                                 setSelectItem(item)
                                 }}>
                                 <div className="col-4 box-image">
-                                    <img className="image-cell" src={logo_black} />
+                                    <img className="image-cell" alt='logo' src={logo_black} />
                                 </div>
 
                                 <div className="col">
@@ -88,7 +91,7 @@ const data = [
             lat: -23.536437,
             log: -46.330250
         }
-    },
+    }, 
     {
         church: 'Bola Suzano',
         name: 'Estrela de davi',

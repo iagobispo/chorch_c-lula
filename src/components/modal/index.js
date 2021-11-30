@@ -7,7 +7,7 @@ export default function ModalDetail({ onClose = () => { }, props }) {
     return (
         <div className="box-modal">
             <div className="container-modal col-8 col-md-7 img_fundo d-flex flex-column align-items-center px-md-5 p-5 pt-0 justify-content-between ">
-                <img className="img-logo" src={Logo} />
+                <img className="img-logo" alt='logo' src={Logo} />
 
                 <div className="col-12 d-md-flex justify-content-md-between flex-md-row mt-5">
                     <div className=" container-fluid m-0 p-0">
@@ -52,7 +52,7 @@ export default function ModalDetail({ onClose = () => { }, props }) {
                     </div>
                     <div className="d-flex align-items-md-end  align-items-center justify-content-between">
                         <button className="btn-close-modal" onClick={onClose}>Cancelar< MdClear className="icon-button" /></button>
-                        <button className="btn-inicia" onClick={() => { }}><a style={{textDecoration: 'none', color: 'white'}} href={`https://www.google.com/maps/search/?api=1&query=${props.position.lat}${props.position.log}`} target='_blank' >Iniciar</a><MdSend className="icon-button" /></button>
+                        <button className="btn-inicia" ><a style={{ textDecoration: 'none', color: 'white' }} href={`https://www.google.com/maps/search/?api=1&query=${props.position.lat}${props.position.log}`} target="_blank" rel="noreferrer" >Iniciar</a><MdSend className="icon-button" /></button>
                     </div>
                 </div>
             </div>
