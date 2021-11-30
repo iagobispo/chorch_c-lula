@@ -60,4 +60,3 @@ export default function ModalDetail({ onClose = () => { }, props }) {
     )
 }
 
-                                                                                                                                     //lat: -23.536557, log: -46.330408
